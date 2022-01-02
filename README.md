@@ -24,3 +24,17 @@ The following guides illustrate how to use some features concretely:
 * [Accessing MongoDB Data with REST](https://spring.io/guides/gs/accessing-mongodb-data-rest/)
 * [Handling Form Submission](https://spring.io/guides/gs/handling-form-submission/)
 
+### Create database. Create user for Spring. Grant a ton of privileges. 
+```dtd
+        create database rentapp_db; -- Creates the new database
+        
+        create user 'springuser'@'%' identified by '5DCm4pTweKaF5'; -- Creates the user
+
+        grant all on rentapp_db.* to 'springuser'@'%'; -- Gives all privileges to the new user on the newly created database
+```
+
+### add new Resident to db
+```dtd
+curl localhost:8080/demo/add -d firstName=Demar -d lastName=DeRozan -d email=kingofthefourt@buckets.com -d mobilePhone=312-555-1234
+```
+

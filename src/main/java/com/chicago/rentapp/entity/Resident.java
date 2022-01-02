@@ -15,6 +15,17 @@ public class Resident {
     private String email;
     private String mobilePhone;
 
+    public Resident(){
+
+    }
+
+    public Resident(String firstName, String lastName, String email, String mobilePhone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.mobilePhone = mobilePhone;
+    }
+
     public Integer getId() {
         return id;
     }
