@@ -1,10 +1,12 @@
 package com.chicago.rentapp.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity
 public class Landlord {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -13,6 +15,16 @@ public class Landlord {
     private String lastName;
     private String email;
     private String mobilePhone;
+
+    public Landlord() {
+    }
+
+    public Landlord(String firstName, String lastName, String email, String mobilePhone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.mobilePhone = mobilePhone;
+    }
 
     public Integer getId() {
         return id;
