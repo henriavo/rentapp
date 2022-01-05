@@ -20,11 +20,10 @@ public class MainController {
 
     @PostMapping(path="/add") //Map ONLY POST requests
     public @ResponseBody
-    String addNewResident (@RequestParam String firstName, @RequestParam String lastName,@RequestParam String email,
-                           @RequestParam String mobilePhone ){
+    String addNewResident (){
 
-//        Resident newGuy = new Resident("Demar", "DeRozan", "kingofthefourt@buckets.com", "312-555-1234");
-//        residentRepository.save(newGuy);
+        Resident newGuy = new Resident("Demar", "DeRozan", "kingofthefourt@buckets.com", "312-555-1234");
+        residentRepository.save(newGuy);
 
         Landlord newLand = new Landlord("Lebron", "James", "ohiokid@nba.com", "312-555-1234");
         landlordRepository.save(newLand);
