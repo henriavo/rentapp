@@ -35,6 +35,20 @@ The following guides illustrate how to use some features concretely:
 
 ### add new Resident to db
 ```dtd
-curl localhost:8080/demo/add -d firstName=Demar -d lastName=DeRozan -d email=kingofthefourt@buckets.com -d mobilePhone=312-555-1234
+curl localhost:8080/demo/addResident -d firstName=Demar -d lastName=DeRozan -d email=kingofthefourt@buckets.com -d mobilePhone=312-555-1234
 ```
 
+### add new Landlord to db
+```dtd
+curl localhost:8080/demo/addLandlord -d firstName=Lebron -d lastName=James -d email=ohiokid@nba.com -d mobilePhone=312-555-5678
+```
+
+### update email for Resident
+```dtd
+curl -X POST "localhost:8080/demo/updateResidentEmail?recordId=1&email=demo@bulls.com"
+```
+
+### update email for Landlord
+```dtd
+curl -X POST "localhost:8080/demo/updateLandlordEmail?recordId=1&email=demo@bulls.com"
+```
