@@ -1,8 +1,13 @@
 package com.chicago.rentapp.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Payment {
@@ -13,6 +18,13 @@ public class Payment {
     private Integer payAmmount;
     private Date payTxDate;
     private Date payDueDate;
+    @Column(nullable = false, updatable = false)
+    @CreationTimestamp
+    private Timestamp createdDate;
+
+    @Column(nullable = false, updatable = true)
+    @UpdateTimestamp
+    private Timestamp updatedTimestamp;
 
     @Override
     public String toString() {

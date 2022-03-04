@@ -1,8 +1,13 @@
 package com.chicago.rentapp.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 public class Property {
@@ -15,6 +20,13 @@ public class Property {
     private String city;
     private String state;
     private Integer zip;
+    @Column(nullable = false, updatable = false)
+    @CreationTimestamp
+    private Timestamp createdDate;
+
+    @Column(nullable = false, updatable = true)
+    @UpdateTimestamp
+    private Timestamp updatedTimestamp;
 
     public Integer getId() {
         return id;

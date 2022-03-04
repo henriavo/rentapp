@@ -1,8 +1,13 @@
 package com.chicago.rentapp.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.sql.Timestamp;
 
 public class Lease {
     @Id
@@ -11,6 +16,13 @@ public class Lease {
     private String leaseStartDate;
     private String leaseEndDate;
     private Integer rentAmmount;
+    @Column(nullable = false, updatable = false)
+    @CreationTimestamp
+    private Timestamp createdDate;
+
+    @Column(nullable = false, updatable = true)
+    @UpdateTimestamp
+    private Timestamp updatedTimestamp;
 
     public Integer getId() {
         return id;
